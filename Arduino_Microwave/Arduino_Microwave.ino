@@ -1,3 +1,5 @@
+//IMPORTANT: I made minimum change to the code, most of it is freely availble on uwaved.com
+// I just made changes so that it is compatible with Aruidno Uno
 #include <avr/interrupt.h> 
 #include <avr/io.h>
 #include <stdio.h>
@@ -5,7 +7,7 @@
 #include <SPI.h> 
 #include <Ethernet.h>
 
-#define THRESHOLD 400
+#define THRESHOLD 400  //I had to change the threshold
 #define CLOCK_PERIOD 1000000	// 1s
 #define START 4 // start at PD2
 #define WAITING 0
@@ -158,7 +160,7 @@ void print_time() {
   Serial.print(time[2], DEC);
   Serial.println(time[3], DEC);
 }
-
+ //I adjusted case statements so that it corresponds with our microwave.
 byte convert(byte digit) {
   switch (digit) {
   case 0:
